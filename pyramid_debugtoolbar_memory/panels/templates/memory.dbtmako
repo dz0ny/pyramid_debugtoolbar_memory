@@ -1,0 +1,40 @@
+<h4>App</h4>
+<table class="pDebugSortable table table-striped table-condensed">
+    <thead>
+        <tr>
+            <th>Resource</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        % for key, value in rows:
+            <tr>
+                <td>${str(key)}</td>
+                <td>${str(value)}</td>
+            </tr>
+        % endfor
+    </tbody>
+</table>
+<h4>Request</h4>
+Before: <pre>${str(req_before)}</pre>
+After: <pre>${str(req_after)}</pre>
+<table class="pDebugSortable table table-striped table-condensed">
+  <thead>
+    <tr>
+      <th>Class</th>
+      <th>Number of instances</th>
+      <th>Total size</th>
+    </tr>
+  </thead>
+  <tbody>
+    % for cls, history, size in classes:
+      <tr>
+        <td>${str(cls)}</td>
+        <td id="${str(cls)}_history">
+          ${len(history)}
+        </td>
+        <td>${size}</td>
+      </tr>
+    % endfor
+  </tbody>
+</table>
